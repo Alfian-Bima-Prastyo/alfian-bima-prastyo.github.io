@@ -1324,16 +1324,3 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 690px) {
-    .max-width {
-        padding: 0 23px;
-    }
-    .home .home-content .text-2 {
-        font-size: 36px;
-    }
-    .home .home-content .text-3 {
-        font-size: 24px;
-    }
-}
-
-
