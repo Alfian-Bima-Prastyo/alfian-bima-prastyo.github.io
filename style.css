@@ -1198,6 +1198,17 @@ footer span a:hover{
 }
 
 @media (max-width: 768px) {
+    .navbar .logo a {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .menu-btn {
+        display: block;
+        z-index: 999;
+        position: absolute;
+        right: 80px;
+    }
     /* home — sembunyikan foto di mobile */
     .home-image {
         display: none;
@@ -1210,21 +1221,31 @@ footer span a:hover{
         margin-top: 0;
     }
     .home .home-content .text-2 {
-        font-size: 42px;
+        font-size: 36px;
         white-space: normal;
     }
     .home .home-content .text-3 {
-        font-size: 28px;
+        font-size: 18px;
     }
     .home .home-content .text-1 {
         font-size: 18px;
     }
     .home .home-content .text-4 {
-        font-size: 13px;
+        font-size: 8px;
     }
     .home .home-content a {
         font-size: 16px;
         padding: 10px 24px;
+    }
+    section .title::after{
+        position: absolute;
+        bottom: -4px;
+        left: 49%;
+        font-size: 13px;
+        color: crimson;
+        padding: 0 5px;
+        background: #fff;
+        transform: translateX(-50%);
     }
 
     /* about */
@@ -1274,10 +1295,9 @@ footer span a:hover{
     }
     .projects .project-header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
-        gap: 8px;
+        gap: 6px;
     }
     .projects .project-header .text {
         flex: 1;
