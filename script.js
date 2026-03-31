@@ -132,4 +132,45 @@ $(document).ready(function(){
         counterObserver.observe(counter);
     });
 
+    // ===== Project Card Overlay =====
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+        const overlay = card.querySelector('.card-overlay');
+        const closeBtn = card.querySelector('.card-overlay-close');
+
+        if (!overlay || !closeBtn) return;
+
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('.card-overlay') || e.target.closest('.project-links')) return;
+
+            document.querySelectorAll('.card-overlay.active').forEach(o => {
+                o.classList.remove('active');
+            });
+
+            overlay.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            overlay.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.project-card')) {
+            document.querySelectorAll('.card-overlay.active').forEach(o => {
+                o.classList.remove('active');
+            });
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.card-overlay.active').forEach(o => {
+                o.classList.remove('active');
+            });
+        }
+    });
+
 });
