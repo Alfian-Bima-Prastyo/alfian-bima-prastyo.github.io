@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Dependencies (kalau pakai npm)
+node_modules/
+
+# Build output (kalau pakai bundler)
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+note.txt
