@@ -7,8 +7,10 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-html {
+
+html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -294,31 +296,6 @@ section .title::after{
     color: #fff;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-    .home-container {
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .home-content {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-    }
-    .home-image {
-        width: 100%;
-        justify-content: center;
-    }
-    .home .home-content .text-2 {
-        font-size: 40px;
-        white-space: normal;
-    }
-    .home-image img {
-        height: 40vh;
-        object-fit: cover;
-    }
-}
-
 /* about section styling */
 .about .title::after {
     content: "who i am";
@@ -380,16 +357,7 @@ section .title::after{
     color: crimson;
     background: none;
 }
-/* responsive */
-@media (max-width: 768px) {
-    .about .about-content {
-        flex-direction: column;
-    }
-    .about .about-content .left,
-    .about .about-content .right {
-        width: 100%;
-    }
-}
+
 
 /* projects section styling */
 .projects {
@@ -583,13 +551,6 @@ section .title::after{
     margin: 0 auto;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-    .projects .projects-content {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* skills section styling */
 .skills .title::after {
     content: "what i know";
@@ -640,21 +601,6 @@ section .title::after{
     background: crimson;
     color: #fff;
     border-color: crimson;
-}
-
-/* responsive */
-@media (max-width: 768px) {
-    .skills .skills-desc {
-        text-align: left;
-        margin-bottom: 28px;
-    }
-    .skills .skill-tags {
-        gap: 6px;
-    }
-    .skills .skill-tags span {
-        font-size: 12px;
-        padding: 5px 12px;
-    }
 }
 
 /* experience & education section styling */
@@ -784,26 +730,6 @@ section .title::after{
     padding: 4px 12px;
     border-radius: 20px;
     border: 1px solid #444;
-}
-
-
-/* responsive */
-@media (max-width: 768px) {
-    .experience .experience-content {
-        padding-left: 20px;
-    }
-    .experience .timeline-dot {
-        left: -28px;
-    }
-    .experience .timeline-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    .experience .timeline-meta {
-        flex-direction: column;
-        gap: 6px;
-    }
 }
 
 /* certifications section styling */
@@ -1074,20 +1000,6 @@ section .title::after{
     color: crimson;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-    .contact .contact-content .column {
-        width: 100%;
-    }
-    .contact .right form .fields {
-        flex-direction: column;
-    }
-    .contact .right form .name {
-        margin-right: 0;
-    }
-}
-
-
 /* footer section styling */
 footer{
     background: crimson;
@@ -1131,9 +1043,15 @@ footer span a:hover{
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1104px) {
-    .about .about-content .left img {
-        height: 350px;
-        width: 350px;
+    .home-image img {
+        display: none;
+    }
+    .about .about-content .left {
+        display: none;
+    }
+    .about .about-content .right {
+        width: 100%;
+        flex-shrink: unset;
     }
 }
 
@@ -1141,12 +1059,40 @@ footer span a:hover{
     .max-width {
         padding: 0 50px;
     }
+    .home-content{
+        margin-top: -40px;
+        margin-left: 10px;
+    }
+    .home .home-content .text-1{
+        font-size: 20px;
+    }
+    .home .home-content .text-2{
+        font-size: 62px;
+    }
+    .home .home-content .text-1{
+        font-size: 32px;
+    }
+    .home .home-content .text-1{
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 947px) {
+    .navbar .max-width {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .max-width {
+        max-width: 100%;
+        padding: 0 50px;
+    }
     .menu-btn {
         display: block;
         z-index: 999;
+        position: static;
+        right: unset;
     }
     .menu-btn i.active:before {
         content: "\f00d";
@@ -1173,37 +1119,47 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
+    .home-content {
+        width: 100%;
+        margin-top: -5px;
+        margin-left: -10px;
+    }
+    .home .home-content .text-1 {
+        font-size: 20px;
+    }
     .home .home-content .text-2 {
-        font-size: 70px;
+        font-size: 60px;
+        white-space: normal;
     }
     .home .home-content .text-3 {
-        font-size: 35px;
+        font-size: 30px;
+    }
+    .home .home-content .text-4 {
+        font-size: 12px;
     }
     .home .home-content a {
         font-size: 23px;
         padding: 10px 30px;
     }
-    .max-width {
-        max-width: 930px;
-    }
-    .about .about-content .column {
-        width: 100%;
-    }
     .about .about-content .left {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
+        display: none;
     }
     .about .about-content .right {
-        flex: 100%;
+        width: 100%;
+        flex-shrink: unset;
+    }
+    .projects .projects-content {
+        grid-template-columns: 1fr;
+    }
+    .projects .project-card:last-child:nth-child(odd) {
+        grid-column: unset;
+        max-width: 100%;
+        margin: 0;
     }
     .skills .skills-content .column,
     .contact .contact-content .column {
         width: 100%;
         margin-bottom: 35px;
-    }
-    .projects .projects-content {
-        grid-template-columns: 1fr;
     }
     .experience .timeline-header {
         flex-direction: column;
@@ -1229,44 +1185,8 @@ footer span a:hover{
 }
 
 @media (max-width: 768px) {
-    .navbar .logo a {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 600;
-    }
-    .menu-btn {
-        display: block;
-        z-index: 999;
-        position: absolute;
-        right: 80px;
-    }
-    .home-image {
-        display: none;
-    }
-    .home-content {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        margin-left: 0;
-        margin-top: 0;
-    }
-    .home .home-content .text-2 {
-        font-size: 36px;
-        white-space: normal;
-    }
-    .home .home-content .text-3 {
-        font-size: 18px;
-    }
-    .home .home-content .text-1 {
-        font-size: 18px;
-    }
-    .home .home-content .text-4 {
-        font-size: 8px;
-    }
-    .home .home-content a {
-        font-size: 16px;
-        padding: 10px 24px;
-    }
+
+    /* ===== GLOBAL ===== */
     section .title::after {
         position: absolute;
         bottom: -4px;
@@ -1277,30 +1197,74 @@ footer span a:hover{
         background: #fff;
         transform: translateX(-50%);
     }
+
+    /* ===== NAVBAR ===== */
+    .navbar .logo a {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .menu-btn {
+        display: block;
+        z-index: 999;
+        position: absolute;
+        right: 80px;
+    }
+
+    /* ===== HOME ===== */
+    .home-image {
+        display: none;
+    }
+    .home-content {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .home-actions {
+        justify-content: center;
+    }
+    .home .home-content .text-1 {
+        font-size: 18px;
+    }
+    .home .home-content .text-2 {
+        font-size: 36px;
+        white-space: normal;
+    }
+    .home .home-content .text-3 {
+        font-size: 18px;
+    }
+    .home .home-content .text-4 {
+        font-size: 8px;
+    }
+    .home .home-content a {
+        font-size: 16px;
+        padding: 10px 24px;
+    }
+
+    /* ===== ABOUT ===== */
     .about {
         padding-top: 120px;
     }
     .about .about-content {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
     }
-    .about .about-content .left,
-    .about .about-content .right {
-        width: 100%;
-        flex-shrink: unset;
+    .about .about-content .right .text {
+        font-size: 18px;
     }
-    .about .about-content .left img {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-        object-position: center 20%;
+    .about .about-content .right p {
+        font-size: 13px;
     }
     .about .about-content .right a {
-        display: block;
+        display: inline-block;
         text-align: center;
         width: fit-content;
-        margin: 10px auto 0 auto;
+        margin: 10px 0 0 0;
     }
+
+    /* ===== COUNTER ===== */
     .counter-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1313,13 +1277,21 @@ footer span a:hover{
     .counter-label {
         font-size: 11px;
     }
+
+    /* ===== PROJECTS ===== */
     .projects .projects-content {
         grid-template-columns: 1fr;
     }
+    .projects .project-card:last-child:nth-child(odd) {
+        grid-column: unset;
+        max-width: 100%;
+        margin: 0;
+    }
     .projects .project-header {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 6px;
     }
     .projects .project-header .text {
@@ -1327,16 +1299,26 @@ footer span a:hover{
     }
     .projects .project-links {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         gap: 6px;
         flex-shrink: 0;
     }
-    .projects .project-card:last-child:nth-child(odd) {
-        grid-column: unset;
-        max-width: 100%;
-        margin: 0;
+
+    /* ===== SKILLS ===== */
+    .skills .skills-desc {
+        text-align: left;
+        margin-bottom: 28px;
     }
+    .skills .skill-tags {
+        gap: 6px;
+    }
+    .skills .skill-tags span {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    /* ===== EXPERIENCE ===== */
     .experience .experience-content {
         padding-left: 24px;
     }
@@ -1352,9 +1334,13 @@ footer span a:hover{
         flex-direction: column;
         gap: 6px;
     }
+
+    /* ===== CERTIFICATIONS ===== */
     .certifications .cert-content {
         grid-template-columns: 1fr;
     }
+
+    /* ===== CONTACT ===== */
     .contact .contact-content .column {
         width: 100%;
     }
@@ -1366,56 +1352,158 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 690px) {
-    .max-width{
-        padding: 0 23px;
+@media (max-width: 480px) {
+
+    /* ===== GLOBAL ===== */
+    section {
+        padding: 90px 0;
     }
-    .home .home-content .text-2{
-        font-size: 60px;
-    }
-    .home .home-content .text-3{
+    section .title {
         font-size: 32px;
+        margin-bottom: 50px;
     }
-    .home .home-content a{
+
+    /* ===== NAVBAR ===== */
+    .menu-btn {
+        position: absolute;
+        right: 20px;
+    }
+
+    /* ===== HOME ===== */
+    .home-actions {
+        justify-content: center;
+    }
+    .home .home-content .text-1 {
+        font-size: 18px;
+    }
+    .home .home-content .text-2 {
+        font-size: 46px;
+    }
+    .home .home-content .text-3 {
+        font-size: 24px;
+    }
+    .home .home-content a {
+        font-size: 16px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about .about-content {
+        gap: 0px;
+    }
+    .about .about-content .right .text {
+        font-size: 17px;
+    }
+    .about .about-content .right p {
+        font-size: 12px;
+    }
+    .about .about-content .right a {
+        margin: 35px auto 0 auto;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects .project-card {
+        padding: 18px;
+    }
+    .projects .project-header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+    .projects .project-header .text {
+        font-size: 16px;
+        flex: 1;
+        min-width: 0;
+    }
+    .projects .title-group {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .projects .project-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2px;
+        flex-shrink: 0;
+        margin-left: auto;
+        padding-left: 8px;
+    }
+    .projects .project-card p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    .projects .tech-stack span {
+        font-size: 11px;
+        padding: 3px 9px;
+    }
+    .projects .project-badge {
+        font-size: 11px;
+        padding: 2px 9px;
+    }
+    .projects .card-overlay h3 {
+        font-size: 15px;
+    }
+    .projects .card-overlay-buttons a {
+        font-size: 13px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills .skills-desc {
+        font-size: 13px;
+    }
+    .skills .skill-tags span {
+        font-size: 11px;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .experience .timeline-title {
+        font-size: 16px;
+    }
+    .experience .timeline-badge {
+        font-size: 9px;
+    }
+    .experience .timeline-company {
+        font-size: 12px;
+    }
+    .experience .timeline-meta span {
+        font-size: 11px;
+    }
+    .experience .timeline-list li {
+        font-size: 11px;
+    }
+    .experience .skill-tags span {
+        font-size: 10px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact .contact-content .text {
         font-size: 20px;
     }
-    .projects .serv-content .card{
-        width: 100%;
+    .contact .contact-content .left p {
+        font-size: 13px;
     }
-}
+    .contact .icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .contact .icons .info .head {
+        font-size: 12px;
+    }
+    .contact .icons .info .sub-title {
+        font-size: 12px;
+        word-break: break-all;
+    }
 
-@media (max-width: 500px) {
-    .home .home-content .text-2{
-        font-size: 50px;
+    /* ===== FOOTER ===== */
+    footer {
+        font-size: 11px;
     }
-    .home .home-content .text-3{
-        font-size: 27px;
-    }
-    .about .about-content .right .text,
-    .skills .skills-content .left .text{
-        font-size: 19px;
-    }
-    .contact .right form .fields{
-        flex-direction: column;
-    }
-    .contact .right form .name,
-    .contact .right form .email{
-        margin: 0;
-    }
-    .right form .error-box{
-       width: 150px;
-    }
-    .scroll-up-btn{
-        right: 15px;
-        bottom: 15px;
-        height: 38px;
-        width: 35px;
-        font-size: 23px;
-        line-height: 38px;
-    }
-}
-
-@media (max-width: 480px) {
 }
 
 @media (max-width: 360px) {
@@ -1434,7 +1522,27 @@ footer span a:hover{
 
     /* ===== NAVBAR ===== */
     .menu-btn {
-        right: 24px;
+        position: absolute;
+        right: 20px;
+    }
+    .navbar .menu {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+    .navbar .menu li {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        font-size: 16px;
+        margin: 6px 0;
+        padding: 4px 0;
     }
 
     /* ===== HOME ===== */
