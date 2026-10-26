@@ -61,7 +61,8 @@ $(document).ready(function(){
 
     // ===== Typed.js =====
     var typed = new Typed(".typing", {
-        strings: ["Data Scientist", "ML Engineer", "AI Engineer"],
+        // strings: ["Data Scientist", "ML Engineer", "AI Engineer"],
+        strings: [ "AI Engineer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
