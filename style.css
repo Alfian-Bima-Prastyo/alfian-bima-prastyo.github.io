@@ -1039,6 +1039,19 @@ footer span a:hover{
     letter-spacing: 1px;
     margin-top: 4px;
 }
+    /* Company description in Experience timeline */
+.experience .timeline-company-description {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0 0 14px;
+}
+
+    /* Responsive certificate grid */
+.certifications .cert-content {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 
 /* ===== RESPONSIVE ===== */
 
@@ -1704,16 +1717,5 @@ footer span a:hover{
         font-size: 10px;
     }
 
-    /* Company description in Experience timeline */
-    .experience .timeline-company-description {
-        color: #aaa;
-        font-size: 13px;
-        line-height: 1.7;
-        margin: 0 0 14px;
-    }
 
-    /* Responsive certificate grid */
-    .certifications .cert-content {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
 }
